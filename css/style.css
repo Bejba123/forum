@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container, .forum-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h2 { text-align: center; }
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea { resize: vertical; height: 80px; }
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover { background-color: #45a049; }
+
+.post {
+    background-color: #e7f3fe;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Kolory rang */
+.h { color: darkred; font-weight: bold; }
+.km { color: purple; font-weight: bold; }
+.m { color: blue; font-weight: bold; }
+.j@ { color: teal; font-weight: bold; }
+.a { color: orange; font-weight: bold; }
+.h@ { color: darkgreen; font-weight: bold; }
+.współwłaściciel { color: gold; font-weight: bold; }
+.w { color: gray; font-weight: bold; }
