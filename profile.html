@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil użytkownika</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="forum-container">
+        <h2>Profil użytkownika</h2>
+        <div id="profileCard">
+            <!-- Tutaj pojawi się profil -->
+        </div>
+        <button id="logoutBtn">Wyloguj</button>
+        <a href="home.html"><button>Wróć do forum</button></a>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('forumUser'));
+        if(!user) {
+            window.location.href = 'index.html';
+        }
+
+        const profileCard = document.getElementById('profileCard');
+        profileCard.innerHTML = `
+            <p><strong class="${user.rank.toLowerCase().replace(' ', '-')}">
+                ${user.rank} ${user.name}
+            </strong></p>
+            <img src="assets/icons/default-avatar.png" alt="Avatar" style="width:100px; height:100px; border-radius:50%;">
+            <p>Posty: <span id="postCount"></span></p>
+        `;
+
+        const posts = JSON.parse(localStorage.getItem('forumPosts')) || [];
+        const userPosts = posts.filter(p => p.user === user.name);
+        document.getElementById('postCount').textContent = userPosts.length;
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('forumUser');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
